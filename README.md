@@ -26,7 +26,34 @@ $ pip3.8 install -r pip-requirements.txt
 ```
 # Объект тестирования
 
-Представляет из себя [метод](https://github.com/rbudorin/borrower-scoring/blob/master/borrower_scoring.py#L55) класса `BorrowerScoring`, реализующий алгоритм скоринга заемщика. Аргументы функции, описанные в задании, передаются в [конструктор](https://github.com/rbudorin/borrower-scoring/blob/master/borrower_scoring.py#L21).
+Представляет из себя [метод](https://github.com/rbudorin/borrower-scoring/blob/master/borrower_scoring.py#L55) класса `BorrowerScoring`, реализующий алгоритм скоринга заемщика(возвращает сумму годового платежа или `None`, в случае, если сработало одно из условий по которым кредит не выдается). 
+
+Аргументы функции, описанные в задании, передаются в [конструктор](https://github.com/rbudorin/borrower-scoring/blob/master/borrower_scoring.py#L21) класса:
+
+```Python
+
+import pytest
+from enums import *
+from exceptions import *
+from borrower_scoring import BorrowerScoring
+
+def main():
+    borrower_scoring = BorrowerScoring(
+        age=35,
+        income_amount=10,
+        loan_rating=LoanRating.HIGH,
+        loan_amount=3,
+        credit_term=10,
+        sex=Sex.MALE,
+        income_source=IncomeSource.EMPLOYEE,
+        purpose=Purpose.MORTGAGE
+    )
+
+    result = borrower_scoring.score()
+
+if __name__ == "__main__":
+    main()
+```
 
 # Тесты
 
