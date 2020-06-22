@@ -26,7 +26,7 @@ $ pip3.8 install -r pip-requirements.txt
 ```
 # Объект тестирования
 
-Представляет из себя [метод](https://github.com/rbudorin/borrower-scoring/blob/master/borrower_scoring.py#L55) класса `BorrowerScoring`, реализующий алгоритм скоринга заемщика. Аргументы функции, описанные в задании передаются в [конструктор](https://github.com/rbudorin/borrower-scoring/blob/master/borrower_scoring.py#L21).
+Представляет из себя [метод](https://github.com/rbudorin/borrower-scoring/blob/master/borrower_scoring.py#L55) класса `BorrowerScoring`, реализующий алгоритм скоринга заемщика. Аргументы функции, описанные в задании, передаются в [конструктор](https://github.com/rbudorin/borrower-scoring/blob/master/borrower_scoring.py#L21).
 
 # Тесты
 
@@ -42,4 +42,10 @@ $ pip3.8 install -r pip-requirements.txt
 $ pytest -v --html=report.html --self-contained-html
 ```
 
-Результаты выполнения тестов будут доступны в формате HTML, для этого нужно открыть в браузере файл `report.html`.
+Если необходимо сохранить отчет о результатах выполнения тестов, то это можно сделать вот так:
+
+```bash
+$ pytest -v --html=report.html --self-contained-html
+```
+
+Результаты будут доступны в формате HTML(файл `report.html` в корне проекта).
