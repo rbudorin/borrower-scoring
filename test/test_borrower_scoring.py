@@ -1,6 +1,3 @@
-#!/usr/bin/python
-# encoding: utf8
-
 import pytest
 from enums import *
 from exceptions import *

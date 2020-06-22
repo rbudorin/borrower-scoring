@@ -1,6 +1,3 @@
-#!/usr/bin/python
-# encoding: utf8
-
 import math
 from exceptions import *
 from enums import *

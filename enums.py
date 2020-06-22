@@ -1,6 +1,3 @@
-#!/usr/bin/python
-# encoding: utf8
-
 from enum import Enum
 
 
