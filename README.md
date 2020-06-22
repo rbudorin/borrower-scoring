@@ -28,10 +28,11 @@ $ pip3.8 install -r pip-requirements.txt
 
 Представляет из себя [метод](https://github.com/rbudorin/borrower-scoring/blob/master/borrower_scoring.py#L55) класса `BorrowerScoring`, реализующий алгоритм скоринга заемщика(возвращает сумму годового платежа или `None`, в случае, если сработало одно из условий по которым кредит не выдается). 
 
-Аргументы функции, описанные в задании, передаются в [конструктор](https://github.com/rbudorin/borrower-scoring/blob/master/borrower_scoring.py#L21) класса:
+Аргументы функции, описанные в задании, передаются в [конструктор](https://github.com/rbudorin/borrower-scoring/blob/master/borrower_scoring.py#L21) класса.
+
+Пример использования и сигнатура вызова конструктора:
 
 ```Python
-
 import pytest
 from enums import *
 from exceptions import *
@@ -50,10 +51,22 @@ def main():
     )
 
     result = borrower_scoring.score()
+    
+    if result is not None:
+        print('Year payment is <%s>:' % '{:f}'.format(result))
+    else:
+        print('Sorry, not today...')
 
 if __name__ == "__main__":
     main()
 ```
+
+Следующие аргументы реализованы как `Enum`:
+
+* [Кредитный рейтинг](https://github.com/rbudorin/borrower-scoring/blob/master/enums.py#L7)
+* [Пол](https://github.com/rbudorin/borrower-scoring/blob/master/enums.py#L48)
+* [Источник дохода](https://github.com/rbudorin/borrower-scoring/blob/master/enums.py#L32)
+* [Цель](https://github.com/rbudorin/borrower-scoring/blob/master/enums.py#L24)
 
 # Тесты
 
