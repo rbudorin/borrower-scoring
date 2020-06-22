@@ -72,7 +72,7 @@ if __name__ == "__main__":
 
 ## Вводная
 
-Тесты расположены в каталоге `tests`, в файле `test_borrower_scoring.py`. Внутри [класс](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L10) с набором тестовых методов и входными параметрами для [объекта тестирования](#объект-тестирования).
+Тесты расположены в каталоге `tests`, в файле `test_borrower_scoring.py`. Внутри [класс](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L7) с набором тестовых методов и входными параметрами для [объекта тестирования](#объект-тестирования).
 
 ## Запуск
 
