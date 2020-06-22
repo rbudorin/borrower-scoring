@@ -28,6 +28,8 @@ $ pip3.8 install -r pip-requirements.txt
 
 Представляет из себя [метод](https://github.com/rbudorin/borrower-scoring/blob/master/borrower_scoring.py#L55) класса `BorrowerScoring`, реализующий алгоритм скоринга заемщика.
 
+Аргументы, описанные в задании передаются в [конструктор](https://github.com/rbudorin/borrower-scoring/blob/master/borrower_scoring.py#L21).
+
 # Тесты
 
 ## Вводная
@@ -39,5 +41,7 @@ $ pip3.8 install -r pip-requirements.txt
 Осуществляется из корня каталога `borrower-scoring` командой:
 
 ```bash
-$ pytest -v
+$ pytest -v --html=report.html --self-contained-html
 ```
+
+Результаты выполнения тестов будут доступны в формате HTML, для этого нужно открыть в браузере файл `report.html`.
