@@ -39,7 +39,7 @@ $ pip3.8 install -r pip-requirements.txt
 Осуществляется из корня каталога `borrower-scoring` командой:
 
 ```bash
-$ pytest -v --html=report.html --self-contained-html
+$ pytest -v
 ```
 
 Если необходимо сохранить отчет о результатах выполнения тестов, то это можно сделать вот так:
