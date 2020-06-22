@@ -28,9 +28,7 @@ $ pip3.8 install -r pip-requirements.txt
 
 Представляет из себя [метод](https://github.com/rbudorin/borrower-scoring/blob/master/borrower_scoring.py#L52) класса `BorrowerScoring`, реализующий алгоритм скоринга заемщика(возвращает сумму годового платежа или `None`, в случае, если сработало одно из условий по которым кредит не выдается). 
 
-Аргументы функции, описанные в задании, передаются в [конструктор](https://github.com/rbudorin/borrower-scoring/blob/master/borrower_scoring.py#L18) класса.
-
-Пример использования и сигнатура вызова конструктора:
+Аргументы функции, описанные в задании, передаются в [конструктор](https://github.com/rbudorin/borrower-scoring/blob/master/borrower_scoring.py#L18) класса:
 
 ```Python
 import pytest
