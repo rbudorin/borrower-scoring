@@ -10,20 +10,19 @@
 Для работы потребуются:
 
 * Интерпретатор `Python` версии `3.8.2`
+* Пакетный менеджер `pip`
 * Зависимости из `pip-requirements.txt`
 
-Устанавливаем пакетный менеджер `pip`:
-```bash
-$ sudo easy_install-3.8 install pip
-```
 Клонируем репозиторий:
 ```bash
 $ git clone git@github.com:rbudorin/borrower-scoring.git && cd borrower-scoring
 ```
+
 Устанавливаем зависимости:
 ```bash
-$ pip3.8 install -r pip-requirements.txt
+$ pip install -r pip-requirements.txt
 ```
+
 # Объект тестирования
 
 Представляет из себя [метод](https://github.com/rbudorin/borrower-scoring/blob/master/borrower_scoring.py#L52) класса `BorrowerScoring`, реализующий алгоритм скоринга заемщика(возвращает сумму годового платежа или `None`, в случае, если сработало одно из условий по которым кредит не выдается). 
