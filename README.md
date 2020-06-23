@@ -95,14 +95,14 @@ if __name__ == "__main__":
 
 | ID | Сценарий передачи невалидного значения аргумента |  
 |------------------|---------------|
-| 1.1 | Возраст |
-| 1.2 | Пол |
-| 1.3 | Источник дохода |
-| 1.4 | Доход за последний год |
-| 1.5 | Кредитный рейтинг |
-| 1.6 | Запрошенная сумма |
-| 1.7 | Срок погашения |
-| 1.8 | Цель |
+| [1.1](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L770) | Возраст |
+| [1.2](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L857) | Пол |
+| [1.3](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L895) | Источник дохода |
+| [1.4](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L838) | Доход за последний год |
+| [1.5](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L672) | Кредитный рейтинг |
+| [1.6](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L799) | Запрошенная сумма |
+| [1.7](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L731) | Срок погашения |
+| [1.8](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L876) | Цель |
 
 ### Отказ на этапе проверки первичной платежеспособности
 
@@ -110,11 +110,10 @@ if __name__ == "__main__":
 
 | ID | Сценарий |  
 |------------------|---------------|
-| 2.1 | Превышение пенсионного возраста на момент последнего платежа |
-| 2.2 | Годовой платеж превышает треть дохода |
-| 2.3 | Низкий кредитный рейтинг |
-| 2.4 | Безработный |
-| 2.5 | Годовой платеж с процентами превышает половину дохода |
+| [2.1](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L614) | Превышение пенсионного возраста на момент последнего платежа |
+| [2.2](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L634) | Годовой платеж превышает треть дохода |
+| [2.3](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L570) | Низкий кредитный рейтинг |
+| [2.4](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L530) | Безработный |
 
 ### Отказ на этапе сравнения доступной и запрошенной суммы займа
 
@@ -122,9 +121,9 @@ if __name__ == "__main__":
 
 | ID | Сценарий |  
 |------------------|---------------|
-| 3.1 | Зависимость запрошенной суммы и источника дохода |
-| 3.2 | Зависимость запрошенной суммы и кредитного рейтинга |
-| 3.3 | Выбор наименьшей суммы доступной для займа |
+| [3.1](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L312) | Зависимость запрошенной суммы и источника дохода |
+| [3.2](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L388) | Зависимость запрошенной суммы и кредитного рейтинга |
+| [3.3](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L476) | Выбор наименьшей суммы доступной для займа |
 
 ### Отказ на этапе проверки платежеспособности на основе годового платежа
 
@@ -132,7 +131,7 @@ if __name__ == "__main__":
 
 | ID | Сценарий |  
 |------------------|---------------|
-| 4.1 | Годовой платеж с процентами превышает половину дохода |
+| [4.1](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L550) | Годовой платеж с процентами превышает половину дохода |
 
 ### Получение кредита
 
@@ -140,16 +139,16 @@ if __name__ == "__main__":
 
 | ID | Сценарий |  
 |------------------|---------------|
-| 5.1 | Изменение ставки в зависимости от суммы кредита |
-| 5.2 | Изменение ставки в зависимости от кредитного рейтинга, цели и дохода |
-| 5.3 | Изменение ставки в зависимости от цели займа |
-| 5.4 | Возраст заемщика |
-| 5.5 | Получение суммы от 0.1 до 10 млн включительно |
-| 5.6 | Получение кредита на срок от 1 до 10 лет включительно |
-| 5.7 | Получение суммы равной ограничению по источнику дохода |
-| 5.8 | Получение суммы равной ограничению по кредитному рейтингу |
-| 5.9 | Получение суммы равной минимальной из ограничений по кредитному рейтингу и источнику дохода |
-| 5.10 | Получение суммы, годовой платеж по которой(без процентов) равен трети готового дохода |
+| [5.1](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L116) | Изменение ставки в зависимости от суммы кредита |
+| [5.2](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L72) | Изменение ставки в зависимости от кредитного рейтинга, цели и дохода |
+| [5.3](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L172) | Изменение ставки в зависимости от цели займа |
+| [5.4](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L216) | Возраст заемщика |
+| [5.5](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L248) | Получение суммы от 0.1 до 10 млн включительно |
+| [5.6](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L280) | Получение кредита на срок от 1 до 10 лет включительно |
+| [5.7](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L356) | Получение суммы равной ограничению по источнику дохода |
+| [5.8](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L444) | Получение суммы равной ограничению по кредитному рейтингу |
+| [5.9](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L509) | Получение суммы равной минимальной из ограничений по кредитному рейтингу и источнику дохода |
+| [5.10](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L654) | Получение суммы, годовой платеж по которой(без процентов) равен трети готового дохода |
 
 # Настройка окружения
 
