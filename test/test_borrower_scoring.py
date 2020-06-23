@@ -70,6 +70,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_positive_rate_according_loan_rating_purpose_and_income_source_condition(self, testdata, expected):
+        """Scenario ID: 5.2"""
         assert self.__exec_score(params=testdata) == expected
 
     @pytest.mark.parametrize(
@@ -113,6 +114,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_positive_rate_according_loan_amount_condition(self, testdata, expected):
+        """Scenario ID: 5.1"""
         assert self.__exec_score(params=testdata) == expected
 
     @pytest.mark.parametrize(
@@ -168,6 +170,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_positive_purpose_rate_condition(self, testdata, expected):
+        """Scenario ID: 5.3"""
         assert self.__exec_score(params=testdata) == expected
 
     @pytest.mark.parametrize(
@@ -183,10 +186,35 @@ class TestBorrowerScoring:
                  'purpose': Purpose.MORTGAGE
             },
              0.6559176003468815
+            ),
+            ({
+                 'age': (Sex.FEMALE.value - 20),
+                 'income_amount': 5,
+                 'loan_rating': LoanRating.HIGH,
+                 'loan_amount': 5,
+                 'credit_term': 20,
+                 'sex': Sex.FEMALE,
+                 'income_source': IncomeSource.EMPLOYEE,
+                 'purpose': Purpose.MORTGAGE
+            },
+             0.565051499783199
+            ),
+            ({
+                 'age': Sex.MALE.value - 2,
+                 'income_amount': 10,
+                 'loan_rating': LoanRating.HIGH,
+                 'loan_amount': 5,
+                 'credit_term': 2,
+                 'sex': Sex.MALE,
+                 'income_source': IncomeSource.EMPLOYEE,
+                 'purpose': Purpose.MORTGAGE
+            },
+             2.815051499783199
             )
         ]
     )
-    def test_positive_min_age_condition(self, testdata, expected):
+    def test_positive_age_condition(self, testdata, expected):
+        """Scenario  ID: 5.4"""
         assert self.__exec_score(params=testdata) == expected
 
     @pytest.mark.parametrize(
@@ -196,16 +224,29 @@ class TestBorrowerScoring:
                  'income_amount': 5,
                  'loan_rating': LoanRating.HIGH,
                  'loan_amount': 0.1,
-                 'credit_term': 2,
+                 'credit_term': 5,
                  'sex': Sex.FEMALE,
                  'income_source': IncomeSource.PASSIVE,
                  'purpose': Purpose.MORTGAGE
             },
-             0.058750000000000004
+             0.028750000000000005
+            ),
+            ({
+                 'age': 25,
+                 'income_amount': 15,
+                 'loan_rating': LoanRating.HIGH,
+                 'loan_amount': 10,
+                 'credit_term': 5,
+                 'sex': Sex.FEMALE,
+                 'income_source': IncomeSource.BUSINESSMAN,
+                 'purpose': Purpose.MORTGAGE
+            },
+             2.65
             )
         ]
     )
-    def test_positive_min_loan_amount_condition(self, testdata, expected):
+    def test_positive_loan_amount_condition(self, testdata, expected):
+        """Scenario ID: 5.5"""
         assert self.__exec_score(params=testdata) == expected
 
     @pytest.mark.parametrize(
@@ -237,6 +278,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_positive_credit_term_condition(self, testdata, expected):
+        """Scenario ID: 5.6"""
         assert self.__exec_score(params=testdata) == expected
 
     @pytest.mark.parametrize(
@@ -268,6 +310,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_negative_available_loan_amount_less_than_loan_amount_income_source_condition(self, testdata, expected):
+        """Scenario ID: 3.1"""
         assert self.__exec_score(params=testdata) == expected
 
     @pytest.mark.parametrize(
@@ -311,6 +354,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_positive_available_loan_amount_equals_loan_amount_income_source_condition(self, testdata, expected):
+        """Scenario ID: 5.7"""
         assert self.__exec_score(params=testdata) == expected
 
     @pytest.mark.parametrize(
@@ -342,6 +386,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_negative_available_loan_amount_less_than_loan_amount_loan_rating_condition(self, testdata, expected):
+        """Scenario ID: 3.2"""
         assert self.__exec_score(params=testdata) == expected
 
     @pytest.mark.parametrize(
@@ -397,6 +442,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_positive_available_loan_amount_equals_loan_amount_loan_rating_condition(self, testdata, expected):
+        """Scenario ID: 5.8"""
         assert self.__exec_score(params=testdata) == expected
 
     @pytest.mark.parametrize(
@@ -429,6 +475,7 @@ class TestBorrowerScoring:
     )
     def test_negative_available_loan_amount_less_than_loan_amount_loan_rating_and_income_source_min_condition(
             self, testdata, expected):
+        """Scenario ID: 3.3"""
         assert self.__exec_score(params=testdata) == expected
 
     @pytest.mark.parametrize(
@@ -461,6 +508,7 @@ class TestBorrowerScoring:
     )
     def test_positive_available_loan_amount_more_than_loan_amount_loan_rating_and_income_source_min_condition(
             self, testdata, expected):
+        """Scenario ID: 5.9"""
         assert self.__exec_score(params=testdata) == expected
 
     @pytest.mark.parametrize(
@@ -480,6 +528,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_negative_unemployed_condition(self, testdata, expected):
+        """Scenario ID: 2.4"""
         assert self.__exec_score(params=testdata) == expected
 
     @pytest.mark.parametrize(
@@ -499,6 +548,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_negative_year_payment_more_than_half_income_condition(self, testdata, expected):
+        """Scenario ID: 4.1"""
         assert self.__exec_score(params=testdata) == expected
 
     @pytest.mark.parametrize(
@@ -518,6 +568,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_negative_unreliable_borrower_condition(self, testdata, expected):
+        """Scenario ID: 2.3"""
         assert self.__exec_score(params=testdata) == expected
 
     @pytest.mark.parametrize(
@@ -561,37 +612,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_negative_retirement_age_condition(self, testdata, expected):
-        assert self.__exec_score(params=testdata) == expected
-
-    @pytest.mark.parametrize(
-        ('testdata', 'expected'), [
-            ({
-                'age': (Sex.FEMALE.value - 20),
-                'income_amount': 5,
-                'loan_rating': LoanRating.HIGH,
-                'loan_amount': 5,
-                'credit_term': 20,
-                'sex': Sex.FEMALE,
-                'income_source': IncomeSource.EMPLOYEE,
-                'purpose': Purpose.MORTGAGE
-            },
-             0.565051499783199
-            ),
-            ({
-                 'age': Sex.MALE.value - 2,
-                 'income_amount': 10,
-                 'loan_rating': LoanRating.HIGH,
-                 'loan_amount': 5,
-                 'credit_term': 2,
-                 'sex': Sex.MALE,
-                 'income_source': IncomeSource.EMPLOYEE,
-                 'purpose': Purpose.MORTGAGE
-            },
-             2.815051499783199
-            )
-        ]
-    )
-    def test_positive_last_payment_age_equals_retirement_age_condition(self, testdata, expected):
+        """Scenario ID: 2.1"""
         assert self.__exec_score(params=testdata) == expected
 
     @pytest.mark.parametrize(
@@ -611,6 +632,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_negative_income_amount_credit_term_ratio_condition(self, testdata, expected):
+        """Scenario ID: 2.2"""
         assert self.__exec_score(params=testdata) == expected
 
     @pytest.mark.parametrize(
@@ -630,6 +652,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_positive_third_of_income_amount_equals_net_payment_condition(self, testdata, expected):
+        """Scenario ID: 5.10"""
         assert self.__exec_score(params=testdata) == expected
 
     @pytest.mark.parametrize(
@@ -647,6 +670,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_invalid_loan_rating_exception(self, testdata):
+        """Scenario ID: 1.5"""
         with pytest.raises(InvalidLoanRatingException):
             self.__exec_score(params=testdata)
 
@@ -705,6 +729,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_invalid_credit_term_exception(self, testdata):
+        """Scenario ID: 1.7"""
         with pytest.raises(InvalidCreditTermException):
             self.__exec_score(params=testdata)
 
@@ -743,6 +768,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_invalid_age_exception(self, testdata):
+        """Scenario ID: 1.1"""
         with pytest.raises(InvalidAgeException):
             self.__exec_score(params=testdata)
 
@@ -771,6 +797,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_invalid_loan_amount_exception(self, testdata):
+        """Scenario ID: 1.6"""
         with pytest.raises(InvalidLoanAmountException):
             self.__exec_score(params=testdata)
 
@@ -809,6 +836,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_invalid_income_amount_exception(self, testdata):
+        """Scenario ID: 1.4"""
         with pytest.raises(InvalidIncomeAmountException):
             self.__exec_score(params=testdata)
 
@@ -827,6 +855,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_invalid_sex_exception(self, testdata):
+        """Scenario ID: 1.2"""
         with pytest.raises(InvalidSexException):
             self.__exec_score(params=testdata)
 
@@ -845,6 +874,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_invalid_purpose_exception(self, testdata):
+        """Scenario ID: 1.8"""
         with pytest.raises(InvalidPurposeException):
             self.__exec_score(params=testdata)
 
@@ -863,6 +893,7 @@ class TestBorrowerScoring:
         ]
     )
     def test_invalid_income_source_exception(self, testdata):
+        """Scenario ID: 1.3"""
         with pytest.raises(InvalidIncomeSourceException):
             self.__exec_score(params=testdata)
 
