@@ -171,7 +171,7 @@ $ pip install -r pip-requirements.txt
 
 # Unit-тесты
 
-Расположены в каталоге `tests`, в файле `test_borrower_scoring.py`. Внутри [класс](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L7) с набором тестовых методов и входными параметрами для [объекта тестирования](#объект-тестирования).
+Расположены в каталоге `tests`, в файле `test_borrower_scoring.py`. Внутри [класс](https://github.com/rbudorin/borrower-scoring/blob/master/test/test_borrower_scoring.py#L7) с набором тестовых методов и входными параметрами для [объекта тестирования](#объект-тестирования). Каждый метод имеет комментарий с идентификатором пользовательского сценария, который он покрывает.
 
 ## Запуск
 
